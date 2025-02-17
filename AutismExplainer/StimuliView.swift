@@ -31,6 +31,11 @@ struct StimuliView: View {
                 Text("• Touch")
                 Image(systemName: "hand.thumbsup")
             }
+            Text("These are not the only stimuli in existence. Others include:")
+            HStack {
+                Text("• Temperature")
+                Image(systemName: "thermometer")
+            }
         }
         .padding()
     }

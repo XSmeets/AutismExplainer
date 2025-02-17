@@ -25,6 +25,11 @@ struct OverStimulationView: View {
                     Text("• Crying")
                     Image(systemName: "drop.halffull")
                 }
+                HStack {
+                    Text("• Tiredness")
+                    Image(systemName: "zzz")
+                }
+                Text("Limiting exposure to stimuli can help prevent overstimulation, which can, in turn, prevent the symptoms mentioned above.")
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)

@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     "• Aggression" : {
       "localizations" : {
         "nl" : {
@@ -61,6 +64,26 @@
         }
       }
     },
+    "• Temperature" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Temperatuur"
+          }
+        }
+      }
+    },
+    "• Tiredness" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Vermoeidheid"
+          }
+        }
+      }
+    },
     "• Touch" : {
       "localizations" : {
         "nl" : {
@@ -80,6 +103,19 @@
           }
         }
       }
+    },
+    "Energy Meter" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Energiemeter"
+          }
+        }
+      }
+    },
+    "Limiting exposure to stimuli can help prevent overstimulation, which can, in turn, prevent the symptoms mentioned above." : {
+
     },
     "Overstimulation" : {
       "localizations" : {
@@ -117,8 +153,21 @@
         }
       }
     },
+    "These are not the only stimuli in existence. Others include:" : {
+
+    },
     "This app attempts to explain autism to people who are unfamiliar with it. Choose any of the following topics to learn more about them." : {
 
+    },
+    "This app provides several tools for people with autism." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deze app bevat verschillende tools voor mensen met autisme."
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

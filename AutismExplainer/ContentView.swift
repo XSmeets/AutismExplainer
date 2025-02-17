@@ -20,6 +20,10 @@ struct ContentView: View {
                 NavigationLink(destination: OverStimulationView()) {
                     Text("Overstimulation")
                 }
+                Text("This app provides several tools for people with autism.")
+                NavigationLink(destination: EnergyMeterView()) {
+                    Text("Energy Meter")
+                }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
             .padding()
