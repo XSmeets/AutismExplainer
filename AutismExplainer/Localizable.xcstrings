@@ -1,0 +1,97 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "• Aggression" : {
+
+    },
+    "• Auditory" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Horen"
+          }
+        }
+      }
+    },
+    "• Crying" : {
+
+    },
+    "• Panic" : {
+
+    },
+    "• Smell" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Ruiken"
+          }
+        }
+      }
+    },
+    "• Taste" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Proeven"
+          }
+        }
+      }
+    },
+    "• Touch" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Voelen"
+          }
+        }
+      }
+    },
+    "• Visual" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Zien"
+          }
+        }
+      }
+    },
+    "Overstimulation" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Overprikkeling"
+          }
+        }
+      }
+    },
+    "Overstimulation occurs when a person is exposed to too many stimuli. People with autism tend to be less capable of filtering out stimuli, which can make them more susceptible to overstimulation." : {
+
+    },
+    "Overstimulation typically makes a person respond more instinctively, in an attempt to escape the stimuli. This can be expressed through the following symptoms:" : {
+
+    },
+    "Stimuli" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prikkels"
+          }
+        }
+      }
+    },
+    "There are many kinds of stimuli. The most important ones are:" : {
+
+    },
+    "This app attempts to explain autism to people who are unfamiliar with it. Choose any of the following topics to learn more about them." : {
+
+    }
+  },
+  "version" : "1.0"
+}
