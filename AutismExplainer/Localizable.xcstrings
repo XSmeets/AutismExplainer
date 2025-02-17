@@ -2,7 +2,14 @@
   "sourceLanguage" : "en",
   "strings" : {
     "• Aggression" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Aggressie"
+          }
+        }
+      }
     },
     "• Auditory" : {
       "localizations" : {
@@ -15,10 +22,24 @@
       }
     },
     "• Crying" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Huilen"
+          }
+        }
+      }
     },
     "• Panic" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Paniek"
+          }
+        }
+      }
     },
     "• Smell" : {
       "localizations" : {
@@ -87,7 +108,14 @@
       }
     },
     "There are many kinds of stimuli. The most important ones are:" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Er zijn veel verschillende soorten prikkels. De belangrijkste zijn:"
+          }
+        }
+      }
     },
     "This app attempts to explain autism to people who are unfamiliar with it. Choose any of the following topics to learn more about them." : {
 
