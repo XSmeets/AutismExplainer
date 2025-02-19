@@ -33,6 +33,7 @@ struct ContentView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
             .padding()
         }
+        .navigationTitle("Test")
     }
 }
 
