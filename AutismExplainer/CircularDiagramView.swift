@@ -9,12 +9,12 @@ import SwiftUI
 
 struct CircularDiagramView: View {
     let segments: [(color: Color, text: String)] = [
-        (.red, "Angry"),
-        (.orange, "Scared"),
         (.yellow, "Happy"),
         (.green, "Powerful"),
         (.blue, "Normal"),
-        (.purple, "Sad")
+        (.purple, "Sad"),
+        (.red, "Angry"),
+        (.orange, "Scared"),
     ]
     
     var body: some View {
