@@ -7,114 +7,12 @@
     "%lld" : {
 
     },
-    "• %@" : {
-
-    },
-    "• Aggression" : {
-      "extractionState" : "stale",
+    "• " : {
       "localizations" : {
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "• Aggressie"
-          }
-        }
-      }
-    },
-    "• Auditory" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "• Horen"
-          }
-        }
-      }
-    },
-    "• Crying" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "• Huilen"
-          }
-        }
-      }
-    },
-    "• Panic" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "• Paniek"
-          }
-        }
-      }
-    },
-    "• Smell" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "• Ruiken"
-          }
-        }
-      }
-    },
-    "• Taste" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "• Proeven"
-          }
-        }
-      }
-    },
-    "• Temperature" : {
-      "localizations" : {
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "• Temperatuur"
-          }
-        }
-      }
-    },
-    "• Tiredness" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "• Vermoeidheid"
-          }
-        }
-      }
-    },
-    "• Touch" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "• Voelen"
-          }
-        }
-      }
-    },
-    "• Visual" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "• Zien"
+            "value" : "• "
           }
         }
       }
@@ -129,8 +27,41 @@
         }
       }
     },
+    "Aggression" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aggressie"
+          }
+        }
+      }
+    },
+    "Auditory" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Horen"
+          }
+        }
+      }
+    },
     "AutismExplainer" : {
 
+    },
+    "Crying" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Huilen"
+          }
+        }
+      }
     },
     "Emotion circle" : {
       "localizations" : {
@@ -178,12 +109,55 @@
     "Overstimulation typically makes a person respond more instinctively, in an attempt to escape the stimuli. This can be expressed through the following symptoms:" : {
 
     },
+    "Panic" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paniek"
+          }
+        }
+      }
+    },
+    "Smell" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ruiken"
+          }
+        }
+      }
+    },
     "Stimuli" : {
       "localizations" : {
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Prikkels"
+          }
+        }
+      }
+    },
+    "Taste" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Proeven"
+          }
+        }
+      }
+    },
+    "Temperature" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Temperatuur"
           }
         }
       }
@@ -234,6 +208,39 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Deze app bevat verschillende tools voor mensen met autisme."
+          }
+        }
+      }
+    },
+    "Tiredness" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vermoeidheid"
+          }
+        }
+      }
+    },
+    "Touch" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voelen"
+          }
+        }
+      }
+    },
+    "Visual" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zien"
           }
         }
       }

@@ -29,7 +29,7 @@ struct StimuliView: View {
             Text("There are many kinds of stimuli. The most important ones are:")
             ForEach(stimuli, id: \.name) { stimulus in
                 HStack {
-                    Text("• \(stimulus.name)")
+                    Text("• ") + Text(/*NSLocalizedString*/LocalizedStringKey(stimulus.name/*, comment: ""*/))
                     Image(systemName: stimulus.imageName)
                 }
             }
@@ -46,4 +46,5 @@ struct StimuliView: View {
 
 #Preview {
     StimuliView()
+    .environment(\.locale, .init(identifier: "nl"))
 }

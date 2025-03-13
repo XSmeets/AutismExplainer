@@ -30,7 +30,7 @@ struct OverStimulationView: View {
                 Text("Overstimulation typically makes a person respond more instinctively, in an attempt to escape the stimuli. This can be expressed through the following symptoms:").lineLimit(nil).multilineTextAlignment(.leading)
                 ForEach(symptoms, id: \.name) { symptom in
                     HStack {
-                        Text("• \(symptom.name)")
+                        Text("• ") + Text(LocalizedStringKey(symptom.name))
                         Image(systemName: symptom.imageName)
                     }
                 }
@@ -44,4 +44,5 @@ struct OverStimulationView: View {
 
 #Preview {
     OverStimulationView()
+    .environment(\.locale, .init(identifier: "nl"))
 }
