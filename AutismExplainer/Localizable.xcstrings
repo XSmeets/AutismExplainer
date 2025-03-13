@@ -4,6 +4,12 @@
     "" : {
 
     },
+    " occurs when a person is exposed to too many stimuli. People with autism tend to be less capable of filtering out stimuli, which can make them more susceptible to overstimulation." : {
+
+    },
+    " typically makes a person respond more instinctively, in an attempt to escape the stimuli. This can be expressed through the following symptoms:" : {
+
+    },
     "%lld" : {
 
     },
@@ -145,12 +151,6 @@
           }
         }
       }
-    },
-    "Overstimulation occurs when a person is exposed to too many stimuli. People with autism tend to be less capable of filtering out stimuli, which can make them more susceptible to overstimulation." : {
-
-    },
-    "Overstimulation typically makes a person respond more instinctively, in an attempt to escape the stimuli. This can be expressed through the following symptoms:" : {
-
     },
     "Panic" : {
       "extractionState" : "manual",
