@@ -1,5 +1,5 @@
 //
-//  CircularDiagramView.swift
+//  EmotionCircleView.swift
 //  AutismExplainer
 //
 //  Created by Xander Smeets on 24/02/2025.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CircularDiagramView: View {
+struct EmotionCircleView: View {
     let segments: [(color: Color, text: String)] = [
         (.yellow, "Happy"),
         (.green, "Powerful"),
@@ -48,5 +48,5 @@ struct CircularDiagramView: View {
 }
 
 #Preview {
-    CircularDiagramView()
+    EmotionCircleView()
 }

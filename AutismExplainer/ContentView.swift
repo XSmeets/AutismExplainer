@@ -24,7 +24,7 @@ struct ContentView: View {
                     NavigationLink(destination: OverStimulationView()) {
                         Text("Overstimulation")
                     }
-                    NavigationLink(destination: CircularDiagramView()) {
+                    NavigationLink(destination: EmotionCircleView()) {
                         Text("Emotion circle")
                     }
                     Text("This app provides several tools for people with autism.")
