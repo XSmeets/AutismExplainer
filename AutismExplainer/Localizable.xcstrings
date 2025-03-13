@@ -17,6 +17,9 @@
         }
       }
     },
+    "• Temperature" : {
+
+    },
     "Activity" : {
       "localizations" : {
         "nl" : {
@@ -34,6 +37,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aggressie"
+          }
+        }
+      }
+    },
+    "Angry" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Boos"
           }
         }
       }
@@ -83,12 +97,34 @@
         }
       }
     },
+    "Happy" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Blij"
+          }
+        }
+      }
+    },
     "Limiting exposure to stimuli can help prevent overstimulation, which can, in turn, prevent the symptoms mentioned above." : {
       "localizations" : {
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Het beperken van de blootstelling aan prikkels kan overprikkeling voorkomen, hetgeen de hierboven vermelde symptomen kan voorkomen."
+          }
+        }
+      }
+    },
+    "Normal" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Normaal"
           }
         }
       }
@@ -116,6 +152,39 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Paniek"
+          }
+        }
+      }
+    },
+    "Powerful" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Krachtig"
+          }
+        }
+      }
+    },
+    "Sad" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verdrietig"
+          }
+        }
+      }
+    },
+    "Scared" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bang"
           }
         }
       }
@@ -153,6 +222,7 @@
       }
     },
     "Temperature" : {
+      "extractionState" : "stale",
       "localizations" : {
         "nl" : {
           "stringUnit" : {

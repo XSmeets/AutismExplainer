@@ -37,7 +37,7 @@ struct EmotionCircleView: View {
                     let xOffset = radius / 2 * cos(CGFloat(angle.radians))
                     let yOffset = radius / 2 * sin(CGFloat(angle.radians))
                     
-                    Text(segments[index].text)
+                    Text(LocalizedStringKey(segments[index].text))
                         .rotationEffect(angle - .degrees(90))
                         .position(x: center.x + xOffset, y: center.y + yOffset)
                 }
@@ -49,4 +49,5 @@ struct EmotionCircleView: View {
 
 #Preview {
     EmotionCircleView()
+    .environment(\.locale, .init(identifier: "nl"))
 }
