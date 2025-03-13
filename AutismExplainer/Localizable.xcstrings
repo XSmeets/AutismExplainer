@@ -132,6 +132,16 @@
     "AutismExplainer" : {
 
     },
+    "Emotion circle" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Emotiecirkel"
+          }
+        }
+      }
+    },
     "Energy Meter" : {
       "localizations" : {
         "nl" : {
@@ -143,7 +153,14 @@
       }
     },
     "Limiting exposure to stimuli can help prevent overstimulation, which can, in turn, prevent the symptoms mentioned above." : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Het beperken van de blootstelling aan prikkels kan overprikkeling voorkomen, hetgeen de hierboven vermelde symptomen kan voorkomen."
+          }
+        }
+      }
     },
     "Overstimulation" : {
       "localizations" : {
@@ -172,7 +189,14 @@
       }
     },
     "Test" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Test"
+          }
+        }
+      }
     },
     "There are many kinds of stimuli. The most important ones are:" : {
       "localizations" : {
@@ -185,10 +209,24 @@
       }
     },
     "These are not the only stimuli in existence. Others include:" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dit zijn niet de enige stimuli die bestaan. Overige stimuli zijn onder andere:"
+          }
+        }
+      }
     },
     "This app attempts to explain autism to people who are unfamiliar with it. Choose any of the following topics to learn more about them." : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deze app probeert autisme uit te leggen aan personen die er onbekend mee zijn. Kies een van de volgende onderwerpen om er meer over te weten te komen."
+          }
+        }
+      }
     },
     "This app provides several tools for people with autism." : {
       "localizations" : {
