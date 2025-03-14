@@ -16,6 +16,7 @@ struct Activity: Identifiable, Codable {
     
     enum CodingKeys: String, CodingKey {
         case id, name, energyLevel, color
+        case red, green, blue, opacity
     }
     
     init(name: String, energyLevel: Int, color: Color) {
@@ -30,13 +31,11 @@ struct Activity: Identifiable, Codable {
         id = try container.decode(UUID.self, forKey: .id)
         name = try container.decode(String.self, forKey: .name)
         energyLevel = try container.decode(Int.self, forKey: .energyLevel)
-        let colorData = try container.decode(Data.self, forKey: .color)
-        // EnergyMeterView.swift:33:39 'unarchiveTopLevelObjectWithData' was deprecated in macOS 10.14: Use unarchivedObject(ofClass:from:) instead
-        if let nsColor = try NSKeyedUnarchiver.unarchivedObject(ofClass: NSColor.self, from: colorData) {
-            color = Color(nsColor)
-        } else {
-            color = .black
-        }
+        let red = try container.decode(Double.self, forKey: .red)
+        let green = try container.decode(Double.self, forKey: .green)
+        let blue = try container.decode(Double.self, forKey: .blue)
+        let opacity = try container.decode(Double.self, forKey: .opacity)
+        color = Color(red: red, green: green, blue: blue, opacity: opacity)
     }
     
     func encode(to encoder: Encoder) throws {
@@ -44,8 +43,12 @@ struct Activity: Identifiable, Codable {
         try container.encode(id, forKey: .id)
         try container.encode(name, forKey: .name)
         try container.encode(energyLevel, forKey: .energyLevel)
-        let colorData = try NSKeyedArchiver.archivedData(withRootObject: color, requiringSecureCoding: false)
-        try container.encode(colorData, forKey: .color)
+        
+        let components = color.cgColor?.components ?? [0, 0, 0, 1]
+        try container.encode(components[0], forKey: .red)
+        try container.encode(components[1], forKey: .green)
+        try container.encode(components[2], forKey: .blue)
+        try container.encode(components[3], forKey: .opacity)
     }
 }
 
