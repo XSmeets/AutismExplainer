@@ -111,6 +111,7 @@ struct EnergyMeterView: View {
                 .padding()
                 .disabled(totalEnergyUsed() >= availableEnergy)
                 
+                #if !os(tvOS)
                 HStack {
                     // Load button
                     Button(action: loadActivities) {
@@ -124,6 +125,7 @@ struct EnergyMeterView: View {
                     }
                     .padding()
                 }
+                #endif
             }
         }
     }
