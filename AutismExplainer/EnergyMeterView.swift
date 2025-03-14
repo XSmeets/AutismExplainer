@@ -91,12 +91,20 @@ struct EnergyMeterView: View {
                             //         activities.append(Activity(name: "", energyLevel: 1, color: .deterministicColor(activities.count)))
                             //     }
                             // }
-                        Stepper(value: $activities[index].energyLevel, in: 1...maxEnergyLevel(for: index)) {
-                            Text("\(activities[index].energyLevel)")
+                        #if os(tvOS)
+                            TextField("Energy Level", value: $activities[index].energyLevel, formatter: NumberFormatter())
+                                .keyboardType(.numberPad)
                                 .padding(4)
                                 .background(activities[index].color.opacity(0.3))
                                 .cornerRadius(4)
-                        }
+                        #else
+                            Stepper(value: $activities[index].energyLevel, in: 1...maxEnergyLevel(for: index)) {
+                                Text("\(activities[index].energyLevel)")
+                                    .padding(4)
+                                    .background(activities[index].color.opacity(0.3))
+                                    .cornerRadius(4)
+                            }
+                        #endif
                     }
                     .padding(.horizontal)
                 }
