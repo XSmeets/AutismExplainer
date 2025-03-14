@@ -43,6 +43,9 @@
         }
       }
     },
+    "Add Activity" : {
+
+    },
     "Aggression" : {
       "localizations" : {
         "nl" : {
@@ -761,6 +764,9 @@
           }
         }
       }
+    },
+    "Save Activities" : {
+
     },
     "Scared" : {
       "localizations" : {
