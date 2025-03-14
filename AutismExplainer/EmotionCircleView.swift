@@ -46,7 +46,7 @@ struct EmotionCircleView: View {
             let radius = min(geometry.size.width, geometry.size.height) / 2
             let center = CGPoint(x: geometry.size.width / 2, y: geometry.size.height / 2)
             
-            ZStack(alignment: .topLeading) {
+            ZStack(alignment: .leading) {
                 ForEach(segments.indices, id: \.self) { index in
                     let startAngle = Angle(degrees: Double(index) / Double(segments.count) * 360.0)
                     let endAngle = Angle(degrees: Double(index + 1) / Double(segments.count) * 360.0)
@@ -84,12 +84,11 @@ struct EmotionCircleView: View {
                         
                         @State var textWidth: CGFloat = 0
 
-                        ZStack/*(alignment: .trailing)*/ {
-                            Text(segments[index].subSegments[subIndex].text)
-                                .font(.system(size: min(geometry.size.width, geometry.size.height) * 0.07))
-                        }
-                        .rotationEffect(angle, anchor: .leading)
-                        .offset(x: center.x - xOffset, y: center.y - yOffset)
+                        Text(segments[index].subSegments[subIndex].text)
+                        .font(.system(size: min(geometry.size.width, geometry.size.height) * 0.07))
+                        .padding([.leading], 0.02 * radius)
+                        .rotationEffect(angle + .degrees(180), anchor: .leading)
+                        .offset(x: center.x + xOffset, y: yOffset)
                     }
                     
                     let midAngle = startAngle + (endAngle - startAngle) / 2
@@ -97,9 +96,10 @@ struct EmotionCircleView: View {
                     let yOffset = radius * sin(CGFloat(midAngle.radians))
                     
                     Text(segments[index].text)
-                        .font(.system(size: min(geometry.size.width, geometry.size.height) * 0.1))
-                        .rotationEffect(midAngle, anchor: .leading)
-                        .offset(x: center.x - xOffset, y: center.y - yOffset)
+                        .font(.system(size: min(geometry.size.width, geometry.size.height) * 0.09))
+                        .padding([.leading], 0.02 * radius)
+                        .rotationEffect(midAngle + .degrees(180), anchor: .leading)
+                        .offset(x: center.x + xOffset, y: yOffset)
                 }
             }
         }
