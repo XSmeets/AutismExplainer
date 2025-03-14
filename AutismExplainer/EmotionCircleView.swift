@@ -67,7 +67,7 @@ struct EmotionCircleView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            let radius = min(geometry.size.width, geometry.size.height) / 2
+            let radius = min(geometry.size.width, geometry.size.height) / 4
             let center = CGPoint(x: geometry.size.width / 2, y: geometry.size.height / 2)
             
             ZStack(alignment: .leading) {
@@ -109,7 +109,7 @@ struct EmotionCircleView: View {
                         @State var textWidth: CGFloat = 0
 
                         Text(segments[index].subSegments[subIndex].text)
-                        .font(.system(size: min(geometry.size.width, geometry.size.height) * 0.07))
+                        .font(.system(size: min(geometry.size.width, geometry.size.height) * 0.035))
                         .padding([.leading], 0.02 * radius)
                         .rotationEffect(angle + .degrees(180), anchor: .leading)
                         .offset(x: center.x + xOffset, y: yOffset)
@@ -120,14 +120,13 @@ struct EmotionCircleView: View {
                     let yOffset = radius * sin(CGFloat(midAngle.radians))
                     
                     Text(segments[index].text)
-                        .font(.system(size: min(geometry.size.width, geometry.size.height) * 0.09))
+                        .font(.system(size: min(geometry.size.width, geometry.size.height) * 0.045))
                         .padding([.leading], 0.02 * radius)
                         .rotationEffect(midAngle + .degrees(180), anchor: .leading)
                         .offset(x: center.x + xOffset, y: yOffset)
                 }
             }
         }
-        .frame(width: 200, height: 200)
     }
 }
 
