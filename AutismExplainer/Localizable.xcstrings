@@ -692,6 +692,16 @@
         }
       }
     },
+    "Information" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informatie"
+          }
+        }
+      }
+    },
     "Limiting exposure to stimuli can help prevent overstimulation, which can, in turn, prevent the symptoms mentioned above." : {
       "localizations" : {
         "nl" : {
@@ -792,15 +802,8 @@
         }
       }
     },
-    "Test" : {
-      "localizations" : {
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Test"
-          }
-        }
-      }
+    "The emotion circle can be used to find a well-understood description for one's emotions. Emotions in the inner circle show general categories, while emotions in the outer circle show more specific descriptions." : {
+
     },
     "There are many kinds of stimuli. The most important ones are:" : {
       "localizations" : {
@@ -848,6 +851,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vermoeidheid"
+          }
+        }
+      }
+    },
+    "Tools" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tools"
           }
         }
       }
