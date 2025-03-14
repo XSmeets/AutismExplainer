@@ -44,7 +44,6 @@
       }
     },
     "Aggression" : {
-      "extractionState" : "manual",
       "localizations" : {
         "nl" : {
           "stringUnit" : {
@@ -55,7 +54,6 @@
       }
     },
     "Angry" : {
-      "extractionState" : "manual",
       "localizations" : {
         "nl" : {
           "stringUnit" : {
@@ -65,8 +63,10 @@
         }
       }
     },
+    "Anxious" : {
+
+    },
     "Auditory" : {
-      "extractionState" : "manual",
       "localizations" : {
         "nl" : {
           "stringUnit" : {
@@ -79,8 +79,16 @@
     "AutismExplainer" : {
 
     },
+    "Calm" : {
+
+    },
+    "Confident" : {
+
+    },
+    "Content" : {
+
+    },
     "Crying" : {
-      "extractionState" : "manual",
       "localizations" : {
         "nl" : {
           "stringUnit" : {
@@ -110,8 +118,13 @@
         }
       }
     },
+    "Excited" : {
+
+    },
+    "Frustrated" : {
+
+    },
     "Happy" : {
-      "extractionState" : "manual",
       "localizations" : {
         "nl" : {
           "stringUnit" : {
@@ -120,6 +133,9 @@
           }
         }
       }
+    },
+    "Joyful" : {
+
     },
     "Limiting exposure to stimuli can help prevent overstimulation, which can, in turn, prevent the symptoms mentioned above." : {
       "localizations" : {
@@ -131,8 +147,10 @@
         }
       }
     },
+    "Lonely" : {
+
+    },
     "Normal" : {
-      "extractionState" : "manual",
       "localizations" : {
         "nl" : {
           "stringUnit" : {
@@ -153,7 +171,6 @@
       }
     },
     "Panic" : {
-      "extractionState" : "manual",
       "localizations" : {
         "nl" : {
           "stringUnit" : {
@@ -164,7 +181,6 @@
       }
     },
     "Powerful" : {
-      "extractionState" : "manual",
       "localizations" : {
         "nl" : {
           "stringUnit" : {
@@ -175,7 +191,6 @@
       }
     },
     "Sad" : {
-      "extractionState" : "manual",
       "localizations" : {
         "nl" : {
           "stringUnit" : {
@@ -186,7 +201,6 @@
       }
     },
     "Scared" : {
-      "extractionState" : "manual",
       "localizations" : {
         "nl" : {
           "stringUnit" : {
@@ -197,7 +211,6 @@
       }
     },
     "Smell" : {
-      "extractionState" : "manual",
       "localizations" : {
         "nl" : {
           "stringUnit" : {
@@ -217,8 +230,10 @@
         }
       }
     },
+    "Strong" : {
+
+    },
     "Taste" : {
-      "extractionState" : "manual",
       "localizations" : {
         "nl" : {
           "stringUnit" : {
@@ -278,8 +293,10 @@
         }
       }
     },
+    "Tired" : {
+
+    },
     "Tiredness" : {
-      "extractionState" : "manual",
       "localizations" : {
         "nl" : {
           "stringUnit" : {
@@ -290,7 +307,6 @@
       }
     },
     "Touch" : {
-      "extractionState" : "manual",
       "localizations" : {
         "nl" : {
           "stringUnit" : {
@@ -300,8 +316,10 @@
         }
       }
     },
+    "Upset" : {
+
+    },
     "Visual" : {
-      "extractionState" : "manual",
       "localizations" : {
         "nl" : {
           "stringUnit" : {
@@ -310,6 +328,9 @@
           }
         }
       }
+    },
+    "Worried" : {
+
     }
   },
   "version" : "1.0"
