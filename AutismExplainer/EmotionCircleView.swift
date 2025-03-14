@@ -16,28 +16,52 @@ struct Segment {
 struct EmotionCircleView: View {
     let segments: [Segment] = [
         Segment(color: .yellow, text: "Happy", subSegments: [
-            Segment(color: .yellow.opacity(0.8), text: "Joyful", subSegments: []),
-            Segment(color: .yellow.opacity(0.6), text: "Excited", subSegments: [])
+            Segment(color: .yellow.opacity(0.85), text: "EMOTIE_Opgewonden", subSegments: []),
+            Segment(color: .yellow.opacity(0.75), text: "EMOTIE_Sensueel", subSegments: []),
+            Segment(color: .yellow.opacity(0.65), text: "EMOTIE_Energiek", subSegments: []),
+            Segment(color: .yellow.opacity(0.55), text: "EMOTIE_Vrolijk", subSegments: []),
+            Segment(color: .yellow.opacity(0.45), text: "EMOTIE_Creatief", subSegments: []),
+            Segment(color: .yellow.opacity(0.35), text: "EMOTIE_Hoopvol", subSegments: [])
         ]),
         Segment(color: .green, text: "Powerful", subSegments: [
-            Segment(color: .green.opacity(0.8), text: "Confident", subSegments: []),
-            Segment(color: .green.opacity(0.6), text: "Strong", subSegments: [])
+            Segment(color: .green.opacity(0.85), text: "EMOTIE_Bewust", subSegments: []),
+            Segment(color: .green.opacity(0.75), text: "EMOTIE_Trots", subSegments: []),
+            Segment(color: .green.opacity(0.65), text: "EMOTIE_Gerespecteerd", subSegments: []),
+            Segment(color: .green.opacity(0.55), text: "EMOTIE_Geapprecieerd", subSegments: []),
+            Segment(color: .green.opacity(0.45), text: "EMOTIE_Belangrijk", subSegments: []),
+            Segment(color: .green.opacity(0.35), text: "EMOTIE_Trouw", subSegments: [])
         ]),
         Segment(color: .blue, text: "Normal", subSegments: [
-            Segment(color: .blue.opacity(0.8), text: "Content", subSegments: []),
-            Segment(color: .blue.opacity(0.6), text: "Calm", subSegments: [])
+            Segment(color: .blue.opacity(0.85), text: "EMOTIE_Verzorgend", subSegments: []),
+            Segment(color: .blue.opacity(0.75), text: "EMOTIE_Vertrouwend", subSegments: []),
+            Segment(color: .blue.opacity(0.65), text: "EMOTIE_Liefhebbend", subSegments: []),
+            Segment(color: .blue.opacity(0.55), text: "EMOTIE_Intiem", subSegments: []),
+            Segment(color: .blue.opacity(0.45), text: "EMOTIE_Bedachtzaam", subSegments: []),
+            Segment(color: .blue.opacity(0.35), text: "EMOTIE_Tevreden", subSegments: [])
         ]),
         Segment(color: .purple, text: "Sad", subSegments: [
-            Segment(color: .purple.opacity(0.8), text: "Lonely", subSegments: []),
-            Segment(color: .purple.opacity(0.6), text: "Tired", subSegments: [])
+            Segment(color: .purple.opacity(0.85), text: "EMOTIE_Moe", subSegments: []),
+            Segment(color: .purple.opacity(0.75), text: "EMOTIE_Verveeld", subSegments: []),
+            Segment(color: .purple.opacity(0.65), text: "EMOTIE_Eenzaam", subSegments: []),
+            Segment(color: .purple.opacity(0.55), text: "EMOTIE_Depressief", subSegments: []),
+            Segment(color: .purple.opacity(0.45), text: "EMOTIE_Beschaamd", subSegments: []),
+            Segment(color: .purple.opacity(0.35), text: "EMOTIE_Schuldig", subSegments: [])
         ]),
         Segment(color: .red, text: "Angry", subSegments: [
-            Segment(color: .red.opacity(0.8), text: "Frustrated", subSegments: []),
-            Segment(color: .red.opacity(0.6), text: "Upset", subSegments: [])
+            Segment(color: .red.opacity(0.85), text: "EMOTIE_Gekwetst", subSegments: []),
+            Segment(color: .red.opacity(0.75), text: "EMOTIE_Vijandig", subSegments: []),
+            Segment(color: .red.opacity(0.65), text: "EMOTIE_Kwaad", subSegments: []),
+            Segment(color: .red.opacity(0.55), text: "EMOTIE_Egoïstisch", subSegments: []),
+            Segment(color: .red.opacity(0.45), text: "EMOTIE_Haatdragend", subSegments: []),
+            Segment(color: .red.opacity(0.35), text: "EMOTIE_Kritisch", subSegments: []),
         ]),
         Segment(color: .orange, text: "Scared", subSegments: [
-            Segment(color: .orange.opacity(0.8), text: "Anxious", subSegments: []),
-            Segment(color: .orange.opacity(0.6), text: "Worried", subSegments: [])
+            Segment(color: .orange.opacity(0.85), text: "EMOTIE_Verward", subSegments: []),
+            Segment(color: .orange.opacity(0.75), text: "EMOTIE_Afgewezen", subSegments: []),
+            Segment(color: .orange.opacity(0.65), text: "EMOTIE_Hulpeloos", subSegments: []),
+            Segment(color: .orange.opacity(0.55), text: "EMOTIE_Onderdanig", subSegments: []),
+            Segment(color: .orange.opacity(0.45), text: "EMOTIE_Onzeker", subSegments: []),
+            Segment(color: .orange.opacity(0.35), text: "EMOTIE_Angstig", subSegments: [])
         ]),
     ]
     

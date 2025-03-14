@@ -63,9 +63,6 @@
         }
       }
     },
-    "Anxious" : {
-
-    },
     "Auditory" : {
       "localizations" : {
         "nl" : {
@@ -79,21 +76,588 @@
     "AutismExplainer" : {
 
     },
-    "Calm" : {
-
-    },
-    "Confident" : {
-
-    },
-    "Content" : {
-
-    },
     "Crying" : {
       "localizations" : {
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Huilen"
+          }
+        }
+      }
+    },
+    "EMOTIE_Afgewezen" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rejected"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afgewezen"
+          }
+        }
+      }
+    },
+    "EMOTIE_Angstig" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afraid"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Angstig"
+          }
+        }
+      }
+    },
+    "EMOTIE_Bedachtzaam" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thoughtful"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bedachtzaam"
+          }
+        }
+      }
+    },
+    "EMOTIE_Belangrijk" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Important"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Belangrijk"
+          }
+        }
+      }
+    },
+    "EMOTIE_Beschaamd" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ashamed"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beschaamd"
+          }
+        }
+      }
+    },
+    "EMOTIE_Bewust" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aware"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bewust"
+          }
+        }
+      }
+    },
+    "EMOTIE_Creatief" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Creative"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Creatief"
+          }
+        }
+      }
+    },
+    "EMOTIE_Depressief" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Depressed"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Depressief"
+          }
+        }
+      }
+    },
+    "EMOTIE_Eenzaam" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lonely"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eenzaam"
+          }
+        }
+      }
+    },
+    "EMOTIE_Egoïstisch" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selfish"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Egoïstisch"
+          }
+        }
+      }
+    },
+    "EMOTIE_Energiek" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Energetic"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Energiek"
+          }
+        }
+      }
+    },
+    "EMOTIE_Geapprecieerd" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appreciated"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geapprecieerd"
+          }
+        }
+      }
+    },
+    "EMOTIE_Gekwetst" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hurt"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gekwetst"
+          }
+        }
+      }
+    },
+    "EMOTIE_Gerespecteerd" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Respected"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gerespecteerd"
+          }
+        }
+      }
+    },
+    "EMOTIE_Haatdragend" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hateful"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haatdragend"
+          }
+        }
+      }
+    },
+    "EMOTIE_Hoopvol" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hopeful"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hoopvol"
+          }
+        }
+      }
+    },
+    "EMOTIE_Hulpeloos" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helpless"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hulpeloos"
+          }
+        }
+      }
+    },
+    "EMOTIE_Intiem" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intimate"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intiem"
+          }
+        }
+      }
+    },
+    "EMOTIE_Kritisch" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Critical"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kritisch"
+          }
+        }
+      }
+    },
+    "EMOTIE_Kwaad" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Angry"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kwaad"
+          }
+        }
+      }
+    },
+    "EMOTIE_Liefhebbend" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loving"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liefhebbend"
+          }
+        }
+      }
+    },
+    "EMOTIE_Moe" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tired"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moe"
+          }
+        }
+      }
+    },
+    "EMOTIE_Onderdanig" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Submissive"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Onderdanig"
+          }
+        }
+      }
+    },
+    "EMOTIE_Onzeker" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uncertain"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Onzeker"
+          }
+        }
+      }
+    },
+    "EMOTIE_Opgewonden" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Excited"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opgewonden"
+          }
+        }
+      }
+    },
+    "EMOTIE_Schuldig" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guilty"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schuldig"
+          }
+        }
+      }
+    },
+    "EMOTIE_Sensueel" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sensual"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sensueel"
+          }
+        }
+      }
+    },
+    "EMOTIE_Tevreden" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Satisfied"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tevreden"
+          }
+        }
+      }
+    },
+    "EMOTIE_Trots" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Proud"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trots"
+          }
+        }
+      }
+    },
+    "EMOTIE_Trouw" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faithful"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trouw"
+          }
+        }
+      }
+    },
+    "EMOTIE_Vertrouwend" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trusting"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vertrouwend"
+          }
+        }
+      }
+    },
+    "EMOTIE_Verveeld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bored"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verveeld"
+          }
+        }
+      }
+    },
+    "EMOTIE_Verward" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confused"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verward"
+          }
+        }
+      }
+    },
+    "EMOTIE_Verzorgend" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Caring"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verzorgend"
+          }
+        }
+      }
+    },
+    "EMOTIE_Vijandig" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hostile"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vijandig"
+          }
+        }
+      }
+    },
+    "EMOTIE_Vrolijk" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cheerful"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vrolijk"
           }
         }
       }
@@ -118,12 +682,6 @@
         }
       }
     },
-    "Excited" : {
-
-    },
-    "Frustrated" : {
-
-    },
     "Happy" : {
       "localizations" : {
         "nl" : {
@@ -134,9 +692,6 @@
         }
       }
     },
-    "Joyful" : {
-
-    },
     "Limiting exposure to stimuli can help prevent overstimulation, which can, in turn, prevent the symptoms mentioned above." : {
       "localizations" : {
         "nl" : {
@@ -146,9 +701,6 @@
           }
         }
       }
-    },
-    "Lonely" : {
-
     },
     "Normal" : {
       "localizations" : {
@@ -230,9 +782,6 @@
         }
       }
     },
-    "Strong" : {
-
-    },
     "Taste" : {
       "localizations" : {
         "nl" : {
@@ -293,9 +842,6 @@
         }
       }
     },
-    "Tired" : {
-
-    },
     "Tiredness" : {
       "localizations" : {
         "nl" : {
@@ -316,9 +862,6 @@
         }
       }
     },
-    "Upset" : {
-
-    },
     "Visual" : {
       "localizations" : {
         "nl" : {
@@ -328,9 +871,6 @@
           }
         }
       }
-    },
-    "Worried" : {
-
     }
   },
   "version" : "1.0"
