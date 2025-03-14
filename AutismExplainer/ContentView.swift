@@ -9,6 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+        TabView {
+            InformationView()
+                .tabItem {
+                    Label("Information", systemImage: "info.circle")
+                }
+            ToolsView()
+                .tabItem {
+                    Label("Tools", systemImage: "wrench")
+                }
+        }
+/*
         NavigationStack {
             VStack {
                 Text("AutismExplainer")
@@ -37,6 +48,7 @@ struct ContentView: View {
             .padding()
         }
         .navigationTitle("Test")
+ */
     }
 }
 
