@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Symptom {
+struct Symptom: Identifiable {
     var id = UUID()
     var name: LocalizedStringKey
     var imageName: String
@@ -29,7 +29,7 @@ struct OverStimulationView: View {
             (Text("Overstimulation") + Text(" occurs when a person is exposed to too many stimuli. People with autism tend to be less capable of filtering out stimuli, which can make them more susceptible to overstimulation.")).lineLimit(nil).multilineTextAlignment(.leading)
             VStack(alignment: .leading) {
                 (Text("Overstimulation") + Text(" typically makes a person respond more instinctively, in an attempt to escape the stimuli. This can be expressed through the following symptoms:")).lineLimit(nil).multilineTextAlignment(.leading)
-                ForEach(symptoms, id: \.id) { symptom in
+                ForEach(symptoms) { symptom in
                     HStack {
                         Text("• ") + Text(symptom.name)
                         Image(systemName: symptom.imageName)

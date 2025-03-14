@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Stimulus {
+struct Stimulus: Identifiable {
     var id = UUID()
     var name: LocalizedStringKey
     var imageName: String
@@ -28,7 +28,7 @@ struct StimuliView: View {
                 .font(.largeTitle)
                 .fontWeight(.bold)
             Text("There are many kinds of stimuli. The most important ones are:")
-            ForEach(stimuli, id: \.id) { stimulus in
+            ForEach(stimuli) { stimulus in
                 HStack {
                     Text("• ") + Text((stimulus.name))
                     Image(systemName: stimulus.imageName)
