@@ -66,67 +66,74 @@ struct EmotionCircleView: View {
     ]
     
     var body: some View {
-        GeometryReader { geometry in
-            let radius = min(geometry.size.width, geometry.size.height) / 4
-            let center = CGPoint(x: geometry.size.width / 2, y: geometry.size.height / 2)
-            
-            ZStack(alignment: .leading) {
-                ForEach(segments.indices, id: \.self) { index in
-                    let startAngle = Angle(degrees: Double(index) / Double(segments.count) * 360.0)
-                    let endAngle = Angle(degrees: Double(index + 1) / Double(segments.count) * 360.0)
-                    
-                    Path { path in
-                        path.move(to: center)
-                        path.addArc(center: center, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: false)
-                    }
-                    .fill(segments[index].color)
-
-                    // Draw each sub-part in the segment
-                    let subParts = segments[index].subSegments.count
-                    let subAngleSize = (endAngle.degrees - startAngle.degrees) / Double(subParts)
-                    
-                    ForEach(segments[index].subSegments.indices, id: \.self) { subIndex in
-                        let localStart = startAngle.degrees + subAngleSize * Double(subIndex)
-                        let localEnd = localStart + subAngleSize
-                        let localStartAngle = Angle(degrees: localStart)
-                        let localEndAngle = Angle(degrees: localEnd)
+        VStack {
+            Text("The emotion circle can be used to find a well-understood description for one's emotions. Emotions in the inner circle show general categories, while emotions in the outer circle show more specific descriptions.")
+            GeometryReader { geometry in
+                let radius = min(geometry.size.width, geometry.size.height) / 4
+                let center = CGPoint(x: geometry.size.width / 2, y: geometry.size.height / 2)
+                
+                ZStack(alignment: .leading) {
+                    ForEach(segments.indices, id: \.self) { index in
+                        let startAngle = Angle(degrees: Double(index) / Double(segments.count) * 360.0)
+                        let endAngle = Angle(degrees: Double(index + 1) / Double(segments.count) * 360.0)
                         
-                        // Outer arc for sub-parts
                         Path { path in
                             path.move(to: center)
-                            path.addArc(center: center,
-                                        radius: 2 * radius,
-                                        startAngle: localStartAngle,
-                                        endAngle: localEndAngle,
-                                        clockwise: false)
+                            path.addArc(center: center, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: false)
                         }
-                        .fill(segments[index].subSegments[subIndex].color)
+                        .fill(segments[index].color)
                         
-                        let angle = localStartAngle + (localEndAngle - localStartAngle) / 2
-                        let xOffset = (2 * radius) * cos(CGFloat(angle.radians))
-                        let yOffset = (2 * radius) * sin(CGFloat(angle.radians))
+                        // Draw each sub-part in the segment
+                        let subParts = segments[index].subSegments.count
+                        let subAngleSize = (endAngle.degrees - startAngle.degrees) / Double(subParts)
                         
-                        @State var textWidth: CGFloat = 0
-
-                        Text(segments[index].subSegments[subIndex].text)
-                        .font(.system(size: min(geometry.size.width, geometry.size.height) * 0.035))
-                        .padding([.leading], 0.02 * radius)
-                        .rotationEffect(angle + .degrees(180), anchor: .leading)
-                        .offset(x: center.x + xOffset, y: yOffset)
+                        ForEach(segments[index].subSegments.indices, id: \.self) { subIndex in
+                            let localStart = startAngle.degrees + subAngleSize * Double(subIndex)
+                            let localEnd = localStart + subAngleSize
+                            let localStartAngle = Angle(degrees: localStart)
+                            let localEndAngle = Angle(degrees: localEnd)
+                            
+                            // Outer arc for sub-parts
+                            Path { path in
+                                path.move(to: center)
+                                path.addArc(center: center,
+                                            radius: 2 * radius,
+                                            startAngle: localStartAngle,
+                                            endAngle: localEndAngle,
+                                            clockwise: false)
+                            }
+                            .fill(segments[index].subSegments[subIndex].color)
+                            
+                            let angle = localStartAngle + (localEndAngle - localStartAngle) / 2
+                            let xOffset = (2 * radius) * cos(CGFloat(angle.radians))
+                            let yOffset = (2 * radius) * sin(CGFloat(angle.radians))
+                            
+                            @State var textWidth: CGFloat = 0
+                            
+                            Text(segments[index].subSegments[subIndex].text)
+                                .font(.system(size: min(geometry.size.width, geometry.size.height) * 0.035))
+                                .padding([.leading], 0.02 * radius)
+                                .rotationEffect(angle + .degrees(180), anchor: .leading)
+                                .offset(x: center.x + xOffset, y: yOffset)
+                        }
+                        
+                        let midAngle = startAngle + (endAngle - startAngle) / 2
+                        let xOffset = radius * cos(CGFloat(midAngle.radians))
+                        let yOffset = radius * sin(CGFloat(midAngle.radians))
+                        
+                        Text(segments[index].text)
+                            .font(.system(size: min(geometry.size.width, geometry.size.height) * 0.045))
+                            .padding([.leading], 0.02 * radius)
+                            .rotationEffect(midAngle + .degrees(180), anchor: .leading)
+                            .offset(x: center.x + xOffset, y: yOffset)
                     }
-                    
-                    let midAngle = startAngle + (endAngle - startAngle) / 2
-                    let xOffset = radius * cos(CGFloat(midAngle.radians))
-                    let yOffset = radius * sin(CGFloat(midAngle.radians))
-                    
-                    Text(segments[index].text)
-                        .font(.system(size: min(geometry.size.width, geometry.size.height) * 0.045))
-                        .padding([.leading], 0.02 * radius)
-                        .rotationEffect(midAngle + .degrees(180), anchor: .leading)
-                        .offset(x: center.x + xOffset, y: yOffset)
                 }
             }
         }
+        .navigationTitle("Emotion circle")
+        #if !os(macOS)
+        .navigationBarTitleDisplayMode(.inline)
+        #endif
     }
 }
 
