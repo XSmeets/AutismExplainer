@@ -732,6 +732,12 @@
         }
       }
     },
+    "Open Document" : {
+
+    },
+    "Opened: %@" : {
+
+    },
     "Overstimulation" : {
       "localizations" : {
         "nl" : {
@@ -781,6 +787,9 @@
           }
         }
       }
+    },
+    "Select Document" : {
+
     },
     "Smell" : {
       "localizations" : {

@@ -6,10 +6,15 @@
 //
 
 import SwiftUI
+#if os(macOS)
+import AppKit
+#endif
 
 struct EnergyMeterView: View {
     @ObservedObject var document: ActivityDocument
     @State private var availableEnergy: Int = 10
+    @State private var documentURL: URL? = nil
+    @State private var showingPicker: Bool = false
     
     var body: some View {
         ScrollView {
@@ -68,6 +73,37 @@ struct EnergyMeterView: View {
                 }
                 .padding()
                 .disabled(totalEnergyUsed() >= availableEnergy)
+
+                // Document Picker Section
+                #if os(macOS)
+                Button("Open Document") {
+                    let panel = NSOpenPanel()
+                    panel.allowedContentTypes = ActivityDocument.readableContentTypes
+                    panel.allowsMultipleSelection = false
+                    if panel.runModal() == .OK {
+                        documentURL = panel.url
+                    }
+                }
+                .padding()
+                #else
+                Button(action: {
+                    showingPicker = true
+                }) {
+                    Text("Open Document")
+                }
+                .padding()
+                
+                .sheet(isPresented: $showingPicker) {
+                    DocumentPicker(documentURL: $documentURL)
+                }
+                #endif
+
+                if let url = documentURL {
+                    // Load document into object
+                    var document_temp: ActivityDocument = try! ActivityDocument(url: url)
+                    // Overwrite object with new document
+                    document.activities = document_temp.activities
+                }
             }
         }
     }
@@ -86,3 +122,35 @@ struct EnergyMeterView: View {
 #Preview {
    EnergyMeterView(document: ActivityDocument())
 }
+
+#if os(iOS)
+import UIKit
+
+struct DocumentPicker: UIViewControllerRepresentable {
+    @Binding var documentURL: URL?
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
+    }
+    
+    class Coordinator: NSObject, UIDocumentPickerDelegate {
+        var parent: DocumentPicker
+        
+        init(_ parent: DocumentPicker) {
+            self.parent = parent
+        }
+        
+        func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+            parent.documentURL = urls.first
+        }
+    }
+    
+    func makeUIViewController(context: Context) -> UIDocumentPickerViewController {
+        let picker = UIDocumentPickerViewController(forOpeningContentTypes: ActivityDocument.readableContentTypes)
+        picker.delegate = context.coordinator
+        return picker
+    }
+    
+    func updateUIViewController(_ uiViewController: UIDocumentPickerViewController, context: Context) {}
+}
+#endif
