@@ -16,7 +16,7 @@ struct ToolsView: View {
                     NavigationLink(destination: EmotionCircleView()) {
                         Text("Emotion circle")
                     }
-                    NavigationLink(destination: EnergyMeterView()) {
+                    NavigationLink(destination: EnergyMeterView(document: ActivityDocument())) {
                         Text("Energy Meter")
                     }
                 }

@@ -44,7 +44,14 @@
       }
     },
     "Add Activity" : {
-
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activiteit toevoegen"
+          }
+        }
+      }
     },
     "Aggression" : {
       "localizations" : {
@@ -715,9 +722,6 @@
         }
       }
     },
-    "Load Activities" : {
-
-    },
     "Normal" : {
       "localizations" : {
         "nl" : {
@@ -767,9 +771,6 @@
           }
         }
       }
-    },
-    "Save Activities" : {
-
     },
     "Scared" : {
       "localizations" : {
