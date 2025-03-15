@@ -9,6 +9,9 @@ import SwiftUI
 
 @main
 struct AutismExplainerApp: App {
+    #if false /*os(iOS)*/
+    @State private var documentScene: DocumentGroupLaunchScene<ActivityDocument>? = nil
+    #endif
     var body: some Scene {
         WindowGroup {
             ContentView()
@@ -36,8 +39,19 @@ struct AutismExplainerApp: App {
 //                .keyboardShortcut("N", modifiers: [.command])
 //            }
 //        }
+        #if os(iOS) || os(visionOS)
+        DocumentGroupLaunchScene("Energy Meter") {
+            NewDocumentButton("Create Energy Scheme", for: ActivityDocument.self)
+        }
+//        .bind($documentScene) // Bind the scene to allow external control
+        #endif
         DocumentGroup(newDocument: ActivityDocument()) { file in
             EnergyMeterView(document: file.document)
         }
     }
+}
+
+#Preview {
+    ContentView()
+    .environment(\.locale, .init(identifier: "nl"))
 }

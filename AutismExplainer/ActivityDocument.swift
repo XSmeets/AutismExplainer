@@ -8,7 +8,7 @@
 import SwiftUI
 import UniformTypeIdentifiers
 
-final class ActivityDocument: ReferenceFileDocument {
+final class ActivityDocument: FileDocument, ObservableObject {
     typealias Snapshot = [Activity]
     
     static var readableContentTypes: [UTType] { [.json] }
