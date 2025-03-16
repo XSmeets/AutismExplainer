@@ -6,7 +6,8 @@
 //
 import SwiftUICore
 
-struct Activity: Identifiable, Codable {
+@Observable
+final class Activity: Identifiable, Codable {
     let id: UUID
     var name: String
     var energyLevel: Int

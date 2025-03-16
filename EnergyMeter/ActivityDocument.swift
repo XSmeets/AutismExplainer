@@ -8,12 +8,13 @@
 import SwiftUI
 import UniformTypeIdentifiers
 
-final class ActivityDocument: FileDocument, ObservableObject {
-    typealias Snapshot = [Activity]
+@Observable
+final class ActivityDocument: ReferenceFileDocument, ObservableObject {
+//    typealias Snapshot = [Activity]
     
-    static var readableContentTypes: [UTType] { [.json] }
+    static let readableContentTypes: [UTType] = [.json]
     
-    @Published var activities: [Activity]
+    var activities: [Activity]
     
     init(activities: [Activity] = [Activity(name: "", energyLevel: 1, color: .deterministicColor(0))]) {
         self.activities = activities
@@ -26,25 +27,28 @@ final class ActivityDocument: FileDocument, ObservableObject {
         self.activities = try JSONDecoder().decode([Activity].self, from: data)
     }
     
-    init(data: Data) throws {
-        self.activities = try JSONDecoder().decode([Activity].self, from: data)
-    }
+//    init(data: Data) throws {
+//        self.activities = try JSONDecoder().decode([Activity].self, from: data)
+//    }
 
 //    convenience init(url: URL) throws {
 //        let configuration: ReadConfiguration = FileDocumentReadConfiguration(file: FileWrapper(url), contentType: .json))
 //        try init(configuration: configuration)
 //    }
     func snapshot(contentType: UTType) throws -> [Activity] {
+        debugPrint(self.activities)
         return self.activities
     }
     
-    func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
-        let data = try JSONEncoder().encode(activities)
-        return .init(regularFileWithContents: data)
-    }
+//    func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
+//        let data = try JSONEncoder().encode(activities)
+//        debugPrint(data)
+//        return .init(regularFileWithContents: data)
+//    }
     
     func fileWrapper(snapshot: [Activity], configuration: WriteConfiguration) throws -> FileWrapper {
         let data = try JSONEncoder().encode(snapshot)
-        return .init(regularFileWithContents: data)
+        debugPrint(data)
+        return FileWrapper(regularFileWithContents: data)
     }
 }

@@ -15,13 +15,14 @@ struct EnergyMeterApp: App {
             NewDocumentButton("Create Energy Scheme", for: ActivityDocument.self)
         }
         #endif
-        DocumentGroup(newDocument: ActivityDocument()) { file in
-            EnergyMeterView(document: file.document)
+        DocumentGroup(newDocument: { ActivityDocument() }) { file in
+            // `file` is a ReferenceFileDocumentConfiguration<ActivityDocument>
+            EnergyMeterView(document: file.$document)
         }
     }
 }
 
-#Preview {
-    EnergyMeterView(document: ActivityDocument())
-    .environment(\.locale, .init(identifier: "nl"))
-}
+//#Preview {
+//    EnergyMeterView(document: ActivityDocument())
+//    .environment(\.locale, .init(identifier: "nl"))
+//}
