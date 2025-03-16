@@ -16,12 +16,12 @@ struct EnergyMeterApp: App {
         }
         #endif
         DocumentGroup(newDocument: ActivityDocument()) { file in
-            EnergyMeterView(document: file.document)
+            EnergyMeterView(document: file.$document)
         }
     }
 }
 
 #Preview {
-    EnergyMeterView(document: ActivityDocument())
+    EnergyMeterView(document: .constant(ActivityDocument()))
     .environment(\.locale, .init(identifier: "nl"))
 }

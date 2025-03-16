@@ -8,12 +8,10 @@
 import SwiftUI
 import UniformTypeIdentifiers
 
-final class ActivityDocument: FileDocument, ObservableObject {
-    typealias Snapshot = [Activity]
-    
+struct ActivityDocument: FileDocument {
     static var readableContentTypes: [UTType] { [.json] }
     
-    @Published var activities: [Activity]
+    var activities: [Activity]
     
     init(activities: [Activity] = [Activity(name: "", energyLevel: 1, color: .deterministicColor(0))]) {
         self.activities = activities
@@ -34,17 +32,9 @@ final class ActivityDocument: FileDocument, ObservableObject {
 //        let configuration: ReadConfiguration = FileDocumentReadConfiguration(file: FileWrapper(url), contentType: .json))
 //        try init(configuration: configuration)
 //    }
-    func snapshot(contentType: UTType) throws -> [Activity] {
-        return self.activities
-    }
     
     func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
         let data = try JSONEncoder().encode(activities)
-        return .init(regularFileWithContents: data)
-    }
-    
-    func fileWrapper(snapshot: [Activity], configuration: WriteConfiguration) throws -> FileWrapper {
-        let data = try JSONEncoder().encode(snapshot)
         return .init(regularFileWithContents: data)
     }
 }

@@ -8,21 +8,8 @@
 import SwiftUI
 
 struct EnergyMeterView: View {
-    @ObservedObject var document: ActivityDocument
+    @Binding var document: ActivityDocument
     @State private var availableEnergy: Int = 10
-    
-    init(document: ActivityDocument) {
-        self.document = document
-    }
-    
-    init(_ url: URL) {
-        let data = try! Data(contentsOf: url)
-        do {
-            self.document = try ActivityDocument(data: data)
-        } catch {
-            self.document = ActivityDocument()
-        }
-    }
     
     var body: some View {
         ScrollView {
@@ -97,5 +84,5 @@ struct EnergyMeterView: View {
 }
 
 #Preview {
-   EnergyMeterView(document: ActivityDocument())
+    EnergyMeterView(document: .constant(ActivityDocument()))
 }
