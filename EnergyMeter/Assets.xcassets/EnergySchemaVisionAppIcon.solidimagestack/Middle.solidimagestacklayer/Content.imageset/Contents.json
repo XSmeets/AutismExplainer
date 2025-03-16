@@ -1,0 +1,13 @@
+{
+  "images" : [
+    {
+      "filename" : "EnergyMeterVisionAppIconMiddle.png",
+      "idiom" : "vision",
+      "scale" : "2x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
