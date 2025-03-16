@@ -1,6 +1,6 @@
 //
 //  ActivityDocument.swift
-//  AutismExplainer
+//  EnergyMeter
 //
 //  Created by Xander Smeets on 14/03/2025.
 //

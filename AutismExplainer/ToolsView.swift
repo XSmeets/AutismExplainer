@@ -24,65 +24,6 @@ struct ToolsView: View {
                     NavigationLink(destination: EmotionCircleView()) {
                         Text("Emotion circle")
                     }
-                    //                    NewDocumentButton("Energy Meter", for: ActivityDocument.self)
-#if os(macOS)
-                    Button("Energy Meter") {
-                        NSDocumentController.shared.newDocument(nil)
-#if os(iOS)
-                        //                        let fileManager = FileManager.default
-                        //                        let documentsDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
-                        //                        let fileURL = documentsDirectory.appendingPathComponent("activities.json")
-                        ////                        let fileURL = FileManager.default.temporaryDirectory.appendingPathComponent("activities.json")
-                        //                        // Create and save an empty document
-                        //                        let document = ActivityDocument()
-                        //                        do {
-                        //                            let data = try JSONEncoder().encode(document.activities)
-                        //                            try data.write(to: fileURL, options: .atomic)
-                        //                            // Open the document using the UIDocumentPicker
-                        ////                            DispatchQueue.main.async {
-                        //                                UIApplication.shared.open(fileURL)
-                        ////                            }
-                        //                            // DispatchQueue.main.async {
-                        //                            //     let picker = UIDocumentPickerViewController(forOpeningContentTypes: [.json])
-                        //                            //     picker.delegate = DocumentPickerDelegate.shared
-                        //                            //     UIApplication.shared.windows.first?.rootViewController?.present(picker, animated: true)
-                        //                            // }
-                        //                        } catch {
-                        //                            print("Failed to create document: \(error)")
-                        //                        }
-#endif
-                    }
-#endif
-#if os(iOS)
-                    NavigationLink("Energy Meter", destination: DocumentLaunchView(for: [.json]) {
-                        NewDocumentButton("New Energy Schema")
-                    } onDocumentOpen: { url in
-                        EnergyMeterView(url)
-                            .navigationBarBackButtonHidden(true)
-                            .navigationTitle("")
-                            .navigationBarTitleDisplayMode(.inline)
-                    })
-#endif
-                    // NavigationLink(destination: EnergyMeterView(document: ActivityDocument())) {
-                    // Text("Energy Meter")
-                    // }
-#if os(visionOS)
-                    Button("New Energy Schema") {
-                        let fileURL = FileManager.default
-                            .temporaryDirectory
-                            .appendingPathComponent("activities.json")
-                        
-                        // Create an empty file if it doesn't exist
-                        if !FileManager.default.fileExists(atPath: fileURL.path) {
-                            let data = "{}".data(using: .utf8)!
-                            FileManager.default.createFile(atPath: fileURL.path, contents: data)
-                        }
-                        
-                        // Open the file using openURL, which will trigger the correct DocumentGroup
-                        UIApplication.shared.open(fileURL)
-                    }
-                    NewDocumentButton("Create Energy Scheme", for: ActivityDocument.self)
-#endif
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
@@ -91,29 +32,6 @@ struct ToolsView: View {
         .navigationTitle("Tools")
     }
 }
-
-private func getDocumentContents(for url: URL) -> ActivityDocument {
-    do {
-//        let fileWrapper = try FileWrapper(url: url, options: .immediate)
-//        let configuration = ActivityDocument.ReadConfiguration(file: fileWrapper)
-//        _ = try ActivityDocument(configuration: configuration)
-        let data = try Data(contentsOf: url)
-        return try ActivityDocument(data: data)
-    } catch {
-        print("Failed to open document: \(error)")
-        return ActivityDocument()
-    }
-}
-#if os(iOS)
-// Handle opening document via UIDocumentPicker (iOS only)
-class DocumentPickerDelegate: NSObject, UIDocumentPickerDelegate {
-    static let shared = DocumentPickerDelegate()
-    
-    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-        print("Selected document: \(urls.first?.absoluteString ?? "None")")
-    }
-}
-#endif
 
 #Preview {
     ToolsView()
