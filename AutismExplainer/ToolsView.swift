@@ -12,7 +12,10 @@ import UIKit
 
 struct ToolsView: View {
     @Environment(\.openWindow) private var openWindow
-
+    #if os(visionOS)
+    @Environment(\.openURL) var openURL
+    #endif
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -21,45 +24,65 @@ struct ToolsView: View {
                     NavigationLink(destination: EmotionCircleView()) {
                         Text("Emotion circle")
                     }
-//                    NewDocumentButton("Energy Meter", for: ActivityDocument.self)
+                    //                    NewDocumentButton("Energy Meter", for: ActivityDocument.self)
 #if os(macOS)
                     Button("Energy Meter") {
                         NSDocumentController.shared.newDocument(nil)
-                        #if os(iOS)
-//                        let fileManager = FileManager.default
-//                        let documentsDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
-//                        let fileURL = documentsDirectory.appendingPathComponent("activities.json")
-////                        let fileURL = FileManager.default.temporaryDirectory.appendingPathComponent("activities.json")
-//                        // Create and save an empty document
-//                        let document = ActivityDocument()
-//                        do {
-//                            let data = try JSONEncoder().encode(document.activities)
-//                            try data.write(to: fileURL, options: .atomic)
-//                            // Open the document using the UIDocumentPicker
-////                            DispatchQueue.main.async {
-//                                UIApplication.shared.open(fileURL)
-////                            }
-//                            // DispatchQueue.main.async {
-//                            //     let picker = UIDocumentPickerViewController(forOpeningContentTypes: [.json])
-//                            //     picker.delegate = DocumentPickerDelegate.shared
-//                            //     UIApplication.shared.windows.first?.rootViewController?.present(picker, animated: true)
-//                            // }
-//                        } catch {
-//                            print("Failed to create document: \(error)")
-//                        }
-                        #endif
+#if os(iOS)
+                        //                        let fileManager = FileManager.default
+                        //                        let documentsDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
+                        //                        let fileURL = documentsDirectory.appendingPathComponent("activities.json")
+                        ////                        let fileURL = FileManager.default.temporaryDirectory.appendingPathComponent("activities.json")
+                        //                        // Create and save an empty document
+                        //                        let document = ActivityDocument()
+                        //                        do {
+                        //                            let data = try JSONEncoder().encode(document.activities)
+                        //                            try data.write(to: fileURL, options: .atomic)
+                        //                            // Open the document using the UIDocumentPicker
+                        ////                            DispatchQueue.main.async {
+                        //                                UIApplication.shared.open(fileURL)
+                        ////                            }
+                        //                            // DispatchQueue.main.async {
+                        //                            //     let picker = UIDocumentPickerViewController(forOpeningContentTypes: [.json])
+                        //                            //     picker.delegate = DocumentPickerDelegate.shared
+                        //                            //     UIApplication.shared.windows.first?.rootViewController?.present(picker, animated: true)
+                        //                            // }
+                        //                        } catch {
+                        //                            print("Failed to create document: \(error)")
+                        //                        }
+#endif
                     }
 #endif
-                    #if os(iOS)
+#if os(iOS)
                     NavigationLink("Energy Meter", destination: DocumentLaunchView(for: [.json]) {
                         NewDocumentButton("New Energy Schema")
                     } onDocumentOpen: { url in
                         EnergyMeterView(url)
+                            .navigationBarBackButtonHidden(true)
+                            .navigationTitle("")
+                            .navigationBarTitleDisplayMode(.inline)
                     })
-                    #endif
+#endif
                     // NavigationLink(destination: EnergyMeterView(document: ActivityDocument())) {
-                        // Text("Energy Meter")
+                    // Text("Energy Meter")
                     // }
+#if os(visionOS)
+                    Button("New Energy Schema") {
+                        let fileURL = FileManager.default
+                            .temporaryDirectory
+                            .appendingPathComponent("activities.json")
+                        
+                        // Create an empty file if it doesn't exist
+                        if !FileManager.default.fileExists(atPath: fileURL.path) {
+                            let data = "{}".data(using: .utf8)!
+                            FileManager.default.createFile(atPath: fileURL.path, contents: data)
+                        }
+                        
+                        // Open the file using openURL, which will trigger the correct DocumentGroup
+                        UIApplication.shared.open(fileURL)
+                    }
+                    NewDocumentButton("Create Energy Scheme", for: ActivityDocument.self)
+#endif
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)

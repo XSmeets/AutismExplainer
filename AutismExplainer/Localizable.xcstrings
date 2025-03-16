@@ -86,6 +86,9 @@
     "AutismExplainer" : {
 
     },
+    "Create Energy Scheme" : {
+
+    },
     "Crying" : {
       "localizations" : {
         "nl" : {
@@ -721,6 +724,9 @@
           }
         }
       }
+    },
+    "New Energy Schema" : {
+
     },
     "Normal" : {
       "localizations" : {
