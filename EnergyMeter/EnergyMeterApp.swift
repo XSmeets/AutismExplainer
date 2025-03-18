@@ -12,7 +12,7 @@ struct EnergyMeterApp: App {
     var body: some Scene {
         #if !os(macOS)
         DocumentGroupLaunchScene("Energy Meter") {
-            NewDocumentButton("Create Energy Scheme", for: ActivityDocument.self)
+            NewDocumentButton("Create Energy Scheme")
         }
         #endif
         DocumentGroup(newDocument: ActivityDocument()) { file in
