@@ -55,7 +55,7 @@ struct EnergyMeterView: View {
                                     .cornerRadius(4)
                             }
 #endif
-                            Button(action: {
+                            Button(role: .destructive, action: {
                                 document.activities.remove(at: index)
                             }) {
                                 Label("Delete Activity", systemImage: "trash")
@@ -65,6 +65,7 @@ struct EnergyMeterView: View {
                             .buttonStyle(.borderedProminent)
                             .tint(.red)
                             .clipShape(Circle())
+                            .disabled(document.activities.count == 1)
 
                         }
                         .padding(.horizontal)
