@@ -36,28 +36,39 @@ struct EnergyMeterView: View {
                 
                 // Activities input
                 ForEach(document.activities.indices, id: \.self) { index in
-                    HStack {
-                        TextField("Activity", text: $document.activities[index].name)
-                            .padding(4)
-                            .background(document.activities[index].color.opacity(0.3))
-                            .cornerRadius(4)
-                        #if os(tvOS)
+                        HStack {
+                            TextField("Activity", text: $document.activities[index].name)
+                                .padding(4)
+                                .background(document.activities[index].color.opacity(0.3))
+                                .cornerRadius(4)
+#if os(tvOS)
                             TextField("Energy Level", value: $document.activities[index].energyLevel, formatter: NumberFormatter())
                                 .keyboardType(.numberPad)
                                 .padding(4)
                                 .background(document.activities[index].color.opacity(0.3))
                                 .cornerRadius(4)
-                        #else
+#else
                             Stepper(value: $document.activities[index].energyLevel, in: 1...maxEnergyLevel(for: index)) {
                                 Text("\(document.activities[index].energyLevel)")
                                     .padding(4)
                                     .background(document.activities[index].color.opacity(0.3))
                                     .cornerRadius(4)
                             }
-                        #endif
+#endif
+                            Button(action: {
+                                document.activities.remove(at: index)
+                            }) {
+                                Label("Delete Activity", systemImage: "trash")
+                                    .labelStyle(.iconOnly)
+                                    .foregroundColor(.white)
+                            }
+                            .buttonStyle(.borderedProminent)
+                            .tint(.red)
+                            .clipShape(Circle())
+
+                        }
+                        .padding(.horizontal)
                     }
-                    .padding(.horizontal)
-                }
                 
                 // Add new activity button
                 Button(action: {
