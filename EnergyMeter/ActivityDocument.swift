@@ -8,24 +8,26 @@
 import SwiftUI
 import UniformTypeIdentifiers
 
-struct ActivityDocument: FileDocument {
+struct ActivityDocument: FileDocument, Encodable, Decodable {
     static var readableContentTypes: [UTType] { [.json] }
     
     var activities: [Activity]
+    var availableEnergy: Int = 10
     
-    init(activities: [Activity] = [Activity(name: "", energyLevel: 1, color: .deterministicColor(0))]) {
+    init(activities: [Activity] = [Activity(name: "", energyLevel: 1, color: .deterministicColor(0))], availableEnergy: Int = 10) {
         self.activities = activities
+        self.availableEnergy = availableEnergy
     }
     
     init(configuration: ReadConfiguration) throws {
         guard let data = configuration.file.regularFileContents else {
             throw CocoaError(.fileReadCorruptFile)
         }
-        self.activities = try JSONDecoder().decode([Activity].self, from: data)
+        self = try JSONDecoder().decode(ActivityDocument.self, from: data)
     }
     
     init(data: Data) throws {
-        self.activities = try JSONDecoder().decode([Activity].self, from: data)
+        self = try JSONDecoder().decode(ActivityDocument.self, from: data)
     }
 
 //    convenience init(url: URL) throws {
@@ -34,7 +36,7 @@ struct ActivityDocument: FileDocument {
 //    }
     
     func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
-        let data = try JSONEncoder().encode(activities)
+        let data = try JSONEncoder().encode(self)
         return .init(regularFileWithContents: data)
     }
 }

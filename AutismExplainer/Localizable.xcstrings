@@ -27,28 +27,6 @@
         }
       }
     },
-    "Activity" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Activiteit"
-          }
-        }
-      }
-    },
-    "Add Activity" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Activiteit toevoegen"
-          }
-        }
-      }
-    },
     "Aggression" : {
       "localizations" : {
         "nl" : {
@@ -674,17 +652,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Emotiecirkel"
-          }
-        }
-      }
-    },
-    "Energy Meter" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Energiemeter"
           }
         }
       }

@@ -1,0 +1,86 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%lld" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        }
+      }
+    },
+    "Activity" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activiteit"
+          }
+        }
+      }
+    },
+    "Add Activity" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activiteit toevoegen"
+          }
+        }
+      }
+    },
+    "Available Energy: %lld" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beschikbare energie: %lld"
+          }
+        }
+      }
+    },
+    "Color" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kleur"
+          }
+        }
+      }
+    },
+    "Create Energy Scheme" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nieuw energieschema"
+          }
+        }
+      }
+    },
+    "Delete Activity" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activiteit verwijderen"
+          }
+        }
+      }
+    },
+    "Energy Meter" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Energiemeter"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
