@@ -15,17 +15,26 @@ struct EnergyMeterView: View {
                 // Energy usage overview
                 VStack {
                     GeometryReader { geometry in
-                        HStack(spacing: 0) {
-                            ForEach(document.activities, id: \.id) { activity in
-                                Rectangle()
-                                    .fill(activity.color)
-                                    .frame(width: CGFloat(activity.energyLevel) / CGFloat(document.availableEnergy) * geometry.size.width)
-                                    .overlay(
-                                        Text(activity.name)
-                                            .foregroundColor(.white)
-                                            .padding(4)
-                                    )
+                        ZStack {
+                            // Background bar
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.gray.opacity(0.3)) // Light gray for contrast
+                                .frame(width: geometry.size.width, height: 50)
+
+                            // Energy levels
+                            HStack(spacing: 0) {
+                                ForEach(document.activities, id: \.id) { activity in
+                                    RoundedRectangle(cornerRadius: 8)
+                                        .fill(activity.color)
+                                        .frame(width: CGFloat(activity.energyLevel) / CGFloat(document.availableEnergy) * geometry.size.width)
+                                        .overlay(
+                                            Text(activity.name)
+                                                .foregroundColor(.white)
+                                                .padding(4)
+                                        )
+                                }
                             }
+                            .frame(maxWidth: .infinity, alignment: .leading)
                         }
                     }
                     .frame(height: 50)
