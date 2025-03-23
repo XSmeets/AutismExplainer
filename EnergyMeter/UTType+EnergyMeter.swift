@@ -9,6 +9,6 @@ import UniformTypeIdentifiers
 
 extension UTType {
     static var activityDocument: UTType {
-        UTType(exportedAs: "ee.smeets.autismexplainer.activity-document")
+        UTType(exportedAs: "ee.smeets.EnergySchema")
     }
 }

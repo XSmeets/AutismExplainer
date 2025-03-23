@@ -1,3 +1,4 @@
 .DS_Store
 .vscode
 AutismExplainer.xcodeproj/project.xcworkspace/xcuserdata
+AutismExplainer.xcodeproj/xcuserdata/*.xcuserdatad

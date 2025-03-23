@@ -25,5 +25,28 @@
 	</array>
 	<key>UISupportsDocumentBrowser</key>
 	<true/>
+	<key>UTExportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeIdentifier</key>
+			<string>ee.smeets.EnergySchema</string>
+			<key>UTTypeDescription</key>
+			<string>Energy Schema</string>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+				<string>public.content</string>
+			</array>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>energyschema</string>
+				</array>
+				<key>public.mime-type</key>
+				<string>application/energyschema</string>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>

@@ -9,7 +9,7 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 struct ActivityDocument: FileDocument, Encodable, Decodable {
-    static var readableContentTypes: [UTType] { [.json] }
+    static var readableContentTypes: [UTType] { [.activityDocument] }
     
     var activities: [Activity]
     var availableEnergy: Int = 10
@@ -31,7 +31,7 @@ struct ActivityDocument: FileDocument, Encodable, Decodable {
     }
 
 //    convenience init(url: URL) throws {
-//        let configuration: ReadConfiguration = FileDocumentReadConfiguration(file: FileWrapper(url), contentType: .json))
+//        let configuration: ReadConfiguration = FileDocumentReadConfiguration(file: FileWrapper(url), contentType: .activityDocument))
 //        try init(configuration: configuration)
 //    }
     
