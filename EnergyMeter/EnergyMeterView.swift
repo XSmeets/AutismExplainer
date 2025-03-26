@@ -9,6 +9,7 @@ import SwiftUI
 
 struct EnergyMeterView: View {
     @Binding var document: ActivityDocument
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
     var body: some View {
             VStack {
@@ -55,36 +56,35 @@ struct EnergyMeterView: View {
                 .padding()
                 
                 HStack {
-                    #if os(macOS)
-                    HStack {
-                        // Field for modifying available energy
-                        Stepper(value: $document.availableEnergy, in: 1...document.maximumEnergy) {
-                            Text("Available Energy: \(document.availableEnergy)")
+                    if horizontalSizeClass == .compact {
+                        VStack {
+                            // Field for modifying available energy
+                            Stepper(value: $document.availableEnergy, in: 1...document.maximumEnergy) {
+                                Text("Available Energy: \(document.availableEnergy)")
+                            }
+                            .padding(.horizontal)
+                            
+                            // Field for modifying maximum energy
+                            Stepper(value: $document.maximumEnergy, in: document.availableEnergy...100) {
+                                Text("Maximum Energy: \(document.maximumEnergy)")
+                            }
+                            .padding(.horizontal)
                         }
-                        .padding(.horizontal)
-                        
-                        // Field for modifying maximum energy
-                        Stepper(value: $document.maximumEnergy, in: document.availableEnergy...100) {
-                            Text("Maximum Energy: \(document.maximumEnergy)")
+                    } else {
+                        HStack {
+                            // Field for modifying available energy
+                            Stepper(value: $document.availableEnergy, in: totalEnergyUsed()...document.maximumEnergy) {
+                                Text("Available Energy: \(document.availableEnergy)")
+                            }
+                            .padding(.horizontal)
+                            
+                            // Field for modifying maximum energy
+                            Stepper(value: $document.maximumEnergy, in: document.availableEnergy...100) {
+                                Text("Maximum Energy: \(document.maximumEnergy)")
+                            }
+                            .padding(.horizontal)
                         }
-                        .padding(.horizontal)
                     }
-                    #elseif os(iOS)
-                    VStack {
-
-                        // Field for modifying available energy
-                        Stepper(value: $document.availableEnergy, in: totalEnergyUsed()...document.maximumEnergy) {
-                            Text("Available Energy: \(document.availableEnergy)")
-                        }
-                        .padding(.horizontal)
-                        
-                        // Field for modifying maximum energy
-                        Stepper(value: $document.maximumEnergy, in: document.availableEnergy...100) {
-                            Text("Maximum Energy: \(document.maximumEnergy)")
-                        }
-                        .padding(.horizontal)
-                    }
-                    #endif
                     
                     Spacer()
                     
