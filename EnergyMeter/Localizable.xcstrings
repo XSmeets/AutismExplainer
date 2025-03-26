@@ -80,6 +80,16 @@
           }
         }
       }
+    },
+    "Maximum Energy: %lld" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maximum energie: %lld"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

@@ -13,10 +13,12 @@ struct ActivityDocument: FileDocument, Encodable, Decodable {
     
     var activities: [Activity]
     var availableEnergy: Int = 10
+    var maximumEnergy: Int = 10
     
-    init(activities: [Activity] = [Activity(name: "", energyLevel: 1, color: .deterministicColor(0))], availableEnergy: Int = 10) {
+    init(activities: [Activity] = [Activity(name: "", energyLevel: 1, color: .deterministicColor(0))], availableEnergy: Int = 10, maximumEnergy: Int = 10) {
         self.activities = activities
         self.availableEnergy = availableEnergy
+        self.maximumEnergy = maximumEnergy
     }
     
     init(configuration: ReadConfiguration) throws {
@@ -30,6 +32,14 @@ struct ActivityDocument: FileDocument, Encodable, Decodable {
         self = try JSONDecoder().decode(ActivityDocument.self, from: data)
     }
 
+    // Custom Decodable initializer to handle missing maximumEnergy
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.activities = try container.decode([Activity].self, forKey: .activities)
+        self.availableEnergy = try container.decodeIfPresent(Int.self, forKey: .availableEnergy) ?? 10
+        self.maximumEnergy = try container.decodeIfPresent(Int.self, forKey: .maximumEnergy) ?? self.availableEnergy
+    }
+
 //    convenience init(url: URL) throws {
 //        let configuration: ReadConfiguration = FileDocumentReadConfiguration(file: FileWrapper(url), contentType: .activityDocument))
 //        try init(configuration: configuration)
@@ -38,5 +48,11 @@ struct ActivityDocument: FileDocument, Encodable, Decodable {
     func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
         let data = try JSONEncoder().encode(self)
         return .init(regularFileWithContents: data)
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case activities
+        case availableEnergy
+        case maximumEnergy
     }
 }

@@ -20,13 +20,26 @@ struct EnergyMeterView: View {
                             RoundedRectangle(cornerRadius: 8)
                                 .fill(Color.gray.opacity(0.3)) // Light gray for contrast
                                 .frame(width: geometry.size.width, height: 50)
+                            
+                            // Overflow energy bar
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(Color.red.opacity(0.3)) // Red for 'overflow' energy'
+                                .frame(
+                                    width: document.maximumEnergy > 0
+                                        ? max(0, CGFloat(document.maximumEnergy - document.availableEnergy) / CGFloat(document.maximumEnergy) * geometry.size.width)
+                                        : 0, // Ensure width is 0 if maximumEnergy is 0
+                                    height: 50
+                                )
+                                .position(x: geometry.size.width - (document.maximumEnergy > 0
+                                    ? max(0, CGFloat(document.maximumEnergy - document.availableEnergy) / CGFloat(document.maximumEnergy) * geometry.size.width) / 2
+                                    : 0), y: 25) // Align to the trailing edge
 
                             // Energy levels
                             HStack(spacing: 0) {
                                 ForEach(document.activities, id: \.id) { activity in
                                     RoundedRectangle(cornerRadius: 8)
                                         .fill(activity.color)
-                                        .frame(width: CGFloat(activity.energyLevel) / CGFloat(document.availableEnergy) * geometry.size.width)
+                                        .frame(width: CGFloat(activity.energyLevel) / CGFloat(document.maximumEnergy) * geometry.size.width)
                                         .overlay(
                                             Text(activity.name)
                                                 .foregroundColor(.white)
@@ -42,11 +55,36 @@ struct EnergyMeterView: View {
                 .padding()
                 
                 HStack {
-                    // Field for modifying available energy
-                    Stepper(value: $document.availableEnergy, in: totalEnergyUsed()...100) {
-                        Text("Available Energy: \(document.availableEnergy)")
+                    #if os(macOS)
+                    HStack {
+                        // Field for modifying available energy
+                        Stepper(value: $document.availableEnergy, in: 1...document.maximumEnergy) {
+                            Text("Available Energy: \(document.availableEnergy)")
+                        }
+                        .padding(.horizontal)
+                        
+                        // Field for modifying maximum energy
+                        Stepper(value: $document.maximumEnergy, in: document.availableEnergy...100) {
+                            Text("Maximum Energy: \(document.maximumEnergy)")
+                        }
+                        .padding(.horizontal)
                     }
-                    .padding(.horizontal)
+                    #elseif os(iOS)
+                    VStack {
+
+                        // Field for modifying available energy
+                        Stepper(value: $document.availableEnergy, in: totalEnergyUsed()...document.maximumEnergy) {
+                            Text("Available Energy: \(document.availableEnergy)")
+                        }
+                        .padding(.horizontal)
+                        
+                        // Field for modifying maximum energy
+                        Stepper(value: $document.maximumEnergy, in: document.availableEnergy...100) {
+                            Text("Maximum Energy: \(document.maximumEnergy)")
+                        }
+                        .padding(.horizontal)
+                    }
+                    #endif
                     
                     Spacer()
                     
@@ -58,7 +96,7 @@ struct EnergyMeterView: View {
                         Text("Add Activity")
                     }
                     .padding(.horizontal)
-                    .disabled(totalEnergyUsed() >= document.availableEnergy)
+                    .disabled(totalEnergyUsed() >= document.maximumEnergy)
                 }
                 
                 ScrollView {
@@ -118,7 +156,7 @@ struct EnergyMeterView: View {
 
     private func maxEnergyLevel(for index: Int) -> Int {
         let totalEnergyUsed = document.activities.reduce(0) { $0 + $1.energyLevel }
-        let remainingEnergy = document.availableEnergy - (totalEnergyUsed - document.activities[index].energyLevel)
+        let remainingEnergy = document.maximumEnergy - (totalEnergyUsed - document.activities[index].energyLevel)
         return remainingEnergy
     }
 
