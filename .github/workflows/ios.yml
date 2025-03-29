@@ -14,12 +14,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Set Default Scheme
+      - name: Set Scheme
         run: |
-          scheme_list=$(xcodebuild -list -json | tr -d "\n")
-          default=$(echo $scheme_list | ruby -e "require 'json'; puts JSON.parse(STDIN.gets)['project']['targets'][0]")
+          default=EnergyMeter
           echo $default | cat >default
-          echo Using default scheme: $default
+          echo Using scheme: $default
       - name: Build
         env:
           scheme: ${{ 'default' }}
