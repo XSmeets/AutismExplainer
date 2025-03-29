@@ -94,7 +94,9 @@ jobs:
     #     ...
     - if: matrix.build-mode == 'manual' && matrix.language == 'swift'
       run: |
-        xcodebuild -workspace AutismExplainer.xcworkspace -scheme EnergyMeter -sdk iphoneos
+        if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
+        file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
+        xcodebuild -"$filetype_parameter" "$file_to_build" -scheme EnergyMeter -sdk iphoneos
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
