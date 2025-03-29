@@ -92,11 +92,18 @@ jobs:
     #     echo '  make release'
     #     exit 1
     #     ...
-    - if: matrix.build-mode == 'manual' && matrix.language == 'swift'
+    - name: Build
+      if: matrix.build-mode == 'manual' && matrix.language == 'swift'
+      env:
+        scheme: EnergyMeter
+        platform: ${{ 'iOS Simulator' }}
       run: |
+        # xcrun xctrace returns via stderr, not the expected stdout (see https://developer.apple.com/forums/thread/663959)
+        device=$(xcrun xctrace list devices 2>&1 | grep -E 'iPhone.* \(.*\)' | grep -oE 'iPhone.* \([0-9.]+\)' | awk -F'[()]' '{ if ($2 >= 18.2) print $1 }' | head -1 | sed -e "s/ Simulator $//")
+        if [ $scheme = default ]; then scheme=$(cat default); fi
         if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
         file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
-        xcodebuild build-for-testing -"$filetype_parameter" "$file_to_build" -scheme EnergyMeter -sdk iphoneos
+        xcodebuild build-for-testing -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "platform=$platform,name=$device"
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
